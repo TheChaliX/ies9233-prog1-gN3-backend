@@ -83,7 +83,7 @@ public class CatalogoService {
         if (jugadores.existsByEquipoIdAndNumeroCamiseta(e.getId(), n.numeroCamiseta())) {
             throw ReglaNegocioException.conflicto("Ese número de camiseta ya está en uso en el equipo");
         }
-        return Mapeo.aDto(jugadores.save(new Jugador(e, n.nombre(), n.apellido(), n.dni(), n.numeroCamiseta())));
+        return Mapeo.aDto(jugadores.save(new Jugador(e, n.nombre(), n.apellido(), n.dni(), n.numeroCamiseta(), n.posicion())));
     }
 
     // ------------------------------------------------------------ canchas y árbitros

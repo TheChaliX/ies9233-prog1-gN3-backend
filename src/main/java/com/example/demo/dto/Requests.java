@@ -37,7 +37,8 @@ public final class Requests {
             @NotBlank @Size(max = 50) String apellido,
             @NotBlank @Size(max = 10) String dni,
             @NotNull @Min(value = 1, message = "La camiseta debe estar entre 1 y 99")
-            @Max(value = 99, message = "La camiseta debe estar entre 1 y 99") Integer numeroCamiseta) {}
+            @Max(value = 99, message = "La camiseta debe estar entre 1 y 99") Integer numeroCamiseta,
+            @Pattern(regexp = "ARQ|DEF|MED|DEL", message = "La posición debe ser ARQ, DEF, MED o DEL") String posicion) {}
 
     public record NuevaCancha(
             @NotBlank @Size(max = 50) String nombre,

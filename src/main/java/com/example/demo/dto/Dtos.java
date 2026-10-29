@@ -13,7 +13,7 @@ public final class Dtos {
     public record PartidoDto(Long id, Integer fecha, LocalDateTime horario, String local, String visitante,
                              int golesLocal, int golesVisitante, EstadoPartido estado, String cancha) {}
 
-    public record JugadorDto(Long id, String nombre, String apellido, Integer numeroCamiseta) {}
+    public record JugadorDto(Long id, String nombre, String apellido, Integer numeroCamiseta, String posicion) {}
 
     public record EventoDto(Long id, Long partidoId, TipoEvento tipo, Integer minuto, Lado lado, JugadorDto jugador) {}
 

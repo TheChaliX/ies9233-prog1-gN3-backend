@@ -13,7 +13,7 @@ final class Mapeo {
     private Mapeo() {}
 
     static JugadorDto aDto(Jugador j) {
-        return new JugadorDto(j.getId(), j.getNombre(), j.getApellido(), j.getNumeroCamiseta());
+        return new JugadorDto(j.getId(), j.getNombre(), j.getApellido(), j.getNumeroCamiseta(), j.getPosicion());
     }
 
     /** LOCAL/VISITANTE según el equipo al que pertenece el jugador del evento. */

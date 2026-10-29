@@ -31,6 +31,10 @@ public class Jugador {
     @Column(name = "numero_camiseta", nullable = false)
     private Integer numeroCamiseta;
 
+    // Puesto en la cancha: ARQ, DEF, MED o DEL. Opcional (los jugadores viejos quedan en null).
+    @Column(length = 3)
+    private String posicion;
+
     protected Jugador() {}
 
     public Jugador(Equipo equipo, String nombre, String apellido, String dni, Integer numeroCamiseta) {
@@ -41,10 +45,16 @@ public class Jugador {
         this.numeroCamiseta = numeroCamiseta;
     }
 
+    public Jugador(Equipo equipo, String nombre, String apellido, String dni, Integer numeroCamiseta, String posicion) {
+        this(equipo, nombre, apellido, dni, numeroCamiseta);
+        this.posicion = posicion;
+    }
+
     public Long getId() { return id; }
     public Equipo getEquipo() { return equipo; }
     public String getNombre() { return nombre; }
     public String getApellido() { return apellido; }
     public String getDni() { return dni; }
     public Integer getNumeroCamiseta() { return numeroCamiseta; }
+    public String getPosicion() { return posicion; }
 }
